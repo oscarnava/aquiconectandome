@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import request from './services/mockAPI';
+import IndexContainer from './containers/indexContainer';
+import './App.sass';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.indexContainer = React.createRef();
+  }
+
+  componentDidMount() {
+    this.fetchIndexContents();
+  }
+
+  async fetchIndexContents() {
+    await request('bitacora')
+      .then((cards) => {
+        console.log('App', { cards });
+        if (this.indexContainer.current) {
+          this.indexContainer.current.cardsInfo = cards;
+        }
+      });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <IndexContainer ref={this.indexContainer} />
+      </div>
+    );
+  }
 }
-
-export default App;
