@@ -6,12 +6,13 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
+    "autosize": "^4.0.2",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-redux": "^7.1.3",
+    "react-scripts": "^3.4.1",
     "redux": "^4.0.4"
   },
   "scripts": {
@@ -35,6 +36,7 @@
       "last 1 safari version"
     ]
   },
+  "homepag": "/aquiconectando",
   "homepage": "",
   "devDependencies": {
     "eslint": "^6.8.0",
