@@ -1,7 +1,8 @@
+//TODO: Text area autoexpand => https://codepen.io/vsync/pen/frudD
+
 import React from 'react';
 import request from './services/mockAPI';
 import IndexContainer from './containers/indexContainer';
-import './App.sass';
 
 export default class App extends React.Component {
   constructor(props) {
