@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import autosize from 'autosize';
 import IndexCard from '../components/indexCard';
+import '../styles/cards.sass';
 
 class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { cards: [] };
+  }
+
+  componentDidUpdate() {
+    console.log('Autosize');
+    autosize(document.querySelectorAll('textarea'));
   }
 
   set cardsInfo(cards) {
@@ -17,14 +24,14 @@ class IndexContainer extends React.Component {
     console.log('IndexContainer', { cards });
     return (
       <div className="index-container">
-        { cards.map(({ id, img }) => <IndexCard key={id} image={img} />) }
+        { cards.map(({ id, img, text }) => <IndexCard key={id} image={img} text={text} />) }
       </div>
     );
   }
 }
 
 IndexContainer.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.array,
 };
 
 export default IndexContainer;
