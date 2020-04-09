@@ -1,4 +1,5 @@
 $card-width: 16rem
+$def-border-radius: 15px
 
 .index-container
   display: flex
@@ -12,7 +13,7 @@ $card-width: 16rem
     margin: .5rem
     background-color: white
     background-image: url(../img/pattern.png)
-    border-radius: 20px
+    border-radius: $def-border-radius
     border: solid 1px #eeeeee
     box-shadow: 10px 10px 5px -6px grey
     border: solid 2px darkgrey
@@ -25,11 +26,30 @@ $card-width: 16rem
     p
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
       padding: 1rem
-      border-radius: 20px
+      border-radius: $def-border-radius
       background-color: #ffffff80
       border: solid 2px darkgrey
 
     textarea
+      box-sizing: border-box
+      padding: 5px
+      margin: .5rem 0
       width: 100%
       min-width: 100%
       max-width: 100%
+      border-radius: $def-border-radius
+
+    .iframe-container
+      position: relative
+      left: 0
+      height: 0
+      width: 100%
+      padding-bottom: 56.25%
+
+      iframe
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: $def-border-radius
