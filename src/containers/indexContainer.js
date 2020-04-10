@@ -24,9 +24,11 @@ class IndexContainer extends React.Component {
     console.log('IndexContainer', { cards });
     return (
       <div className="index-container">
-        { cards.map(({
-          id, img, text, video,
-        }) => <IndexCard key={id} image={img} text={text} video={video} />) }
+        { cards.map(
+          ({
+            id, img, text, video, audio,
+          }) => <IndexCard key={id} image={img} text={text} video={video} audio={audio} />,
+        ) }
       </div>
     );
   }
