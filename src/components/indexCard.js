@@ -56,7 +56,7 @@ class IndexCard extends React.Component {
             <img src={`img/${image}`} alt="Card" />
             <p>{text}</p>
             {this.multimediaFrame}
-            <textarea placeholder="Captura aquí tus pensamientos" rows="2" data-id={id} onChange={this.onMemoChange} />
+            <textarea placeholder="Captura aquí tus pensamientos" rows="2" data-id={id} onChange={this.onMemoChange} value={dataManager.getMemo(id)} />
           </>
         );
       case STATUS_DONE:
