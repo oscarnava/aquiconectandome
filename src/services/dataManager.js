@@ -9,6 +9,7 @@ const dataManager = {
   getMemo: (id) => {
     const memo = localStorage[MEMO_KEY(id)] || '';
     console.log('getMemo', { id, memo });
+    return memo;
   },
 };
 
