@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
+import Globals from '../globals';
+import dataManager from '../services/dataManager';
 
 const STATUS_DONE = 'DONE';
 const STATUS_PENDING = 'PENDING';
@@ -11,6 +13,12 @@ class IndexCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = { status: STATUS_PENDING };
+  }
+
+  onMemoChange = (e) => {
+    const { target: { dataset: { id }, value } } = e;
+    console.log(e, { id, value });
+    dataManager.putMemo(id, value);
   }
 
   get multimediaFrame() {
@@ -30,7 +38,7 @@ class IndexCard extends React.Component {
     if (audio) {
       return (
         <div className="audio-container">
-          <ReactPlayer url={`https://monstruo.me/aquiconectando/snd/${audio}`} controls width="100%" height="100%" />
+          <ReactPlayer url={`${Globals.SOUND_URL}/${audio}`} controls width="100%" height="100%" />
         </div>
       );
     }
@@ -40,7 +48,7 @@ class IndexCard extends React.Component {
 
   get content() {
     const { status } = this.state;
-    const { image, text } = this.props;
+    const { id, image, text } = this.props;
     switch (status) {
       case STATUS_PENDING:
         return (
@@ -48,7 +56,7 @@ class IndexCard extends React.Component {
             <img src={`img/${image}`} alt="Card" />
             <p>{text}</p>
             {this.multimediaFrame}
-            <textarea placeholder="Captura aquí tus pensamientos" rows="2" />
+            <textarea placeholder="Captura aquí tus pensamientos" rows="2" data-id={id} onChange={this.onMemoChange} />
           </>
         );
       case STATUS_DONE:
@@ -68,10 +76,19 @@ class IndexCard extends React.Component {
   }
 }
 
+// Mi mayor temor es perder a mi güerita 👧
 
 IndexCard.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  video: PropTypes.string,
+  audio: PropTypes.string,
   text: PropTypes.string.isRequired,
+};
+
+IndexCard.defaultProps = {
+  video: null,
+  audio: null,
 };
 
 export default IndexCard;
