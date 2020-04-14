@@ -1,6 +1,8 @@
 $low-res: 650px
 $card-width: 16rem
 $def-border-radius: 15px
+$btn-bk-color: #eac214
+$btn-fg-color: #1b5d1b
 
 .index-container
   display: flex
@@ -34,14 +36,53 @@ $def-border-radius: 15px
       background-color: #ffffff80
       border: solid 2px darkgrey
 
-    textarea
-      box-sizing: border-box
-      padding: 5px
-      margin: .5rem 0
-      width: 100%
-      min-width: 100%
-      max-width: 100%
-      border-radius: $def-border-radius
+    .memo
+      position: relative
+      // border: dotted thin red
+
+      .btn
+        display: flex
+        justify-content: center
+        position: absolute
+        width: 2rem
+        height: 2rem
+        color: $btn-fg-color
+        background-color: $btn-bk-color
+        border-color: darken($btn-bk-color, 5%)
+        border-radius: $def-border-radius
+
+      .done
+        bottom: 0
+        right: -0.75rem
+        font-size: 1.1rem
+
+      .edit
+        font-size: 1rem
+        bottom: -0.75rem
+        right: -0.75rem
+
+      textarea
+        box-sizing: border-box
+        padding: .5rem 1rem
+        margin: .5rem 0
+        width: 100%
+        min-width: 100%
+        max-width: 100%
+        border-radius: $def-border-radius
+
+      .text-line
+        margin-top: .5em
+        margin-bottom: .5em
+        overflow-wrap: anywhere
+
+    .card-done
+      .memo
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        font-size: 0.8rem
+        padding: 1rem
+        border-radius: $def-border-radius
+        background-color: #ffffff80
+        border: solid 2px darkgrey
 
     .video-container
       position: relative
@@ -50,6 +91,7 @@ $def-border-radius: 15px
       width: 100%
       padding-bottom: 56.25%
       overflow: hidden
+      margin-bottom: 1rem
 
       iframe
         position: absolute
@@ -65,3 +107,4 @@ $def-border-radius: 15px
       height: 2rem
       width: 100%
       overflow: hidden
+      margin-bottom: 1rem
