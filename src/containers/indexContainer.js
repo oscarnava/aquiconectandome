@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autosize from 'autosize';
 import IndexCard from '../components/indexCard';
 import '../styles/cards.sass';
 
@@ -11,10 +10,6 @@ class IndexContainer extends React.Component {
   }
 
   //TODO: Determine if card should be available for editing.
-
-  componentDidUpdate() {
-    autosize(document.querySelectorAll('textarea'));
-  }
 
   set cardsInfo(cards) {
     this.setState({ cards });
