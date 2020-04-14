@@ -12,13 +12,17 @@ const STATUS_PENDING = 'PENDING';
 class IndexCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { status: STATUS_PENDING };
+    this.state = {
+      status: STATUS_PENDING,
+      memo: dataManager.getMemo(props.id),
+    };
   }
 
   onMemoChange = (e) => {
     const { target: { dataset: { id }, value } } = e;
     console.log(e, { id, value });
     dataManager.putMemo(id, value);
+    this.setState({ memo: value });
   }
 
   get multimediaFrame() {
@@ -47,7 +51,7 @@ class IndexCard extends React.Component {
   }
 
   get content() {
-    const { status } = this.state;
+    const { status, memo } = this.state;
     const { id, image, text } = this.props;
     switch (status) {
       case STATUS_PENDING:
@@ -56,7 +60,7 @@ class IndexCard extends React.Component {
             <img src={`img/${image}`} alt="Card" />
             <p>{text}</p>
             {this.multimediaFrame}
-            <textarea placeholder="Captura aquí tus pensamientos" rows="2" data-id={id} onChange={this.onMemoChange} value={dataManager.getMemo(id)} />
+            <textarea placeholder="Captura aquí tus pensamientos" rows="2" data-id={id} onChange={this.onMemoChange} value={memo} />
           </>
         );
       case STATUS_DONE:
