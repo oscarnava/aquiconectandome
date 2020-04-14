@@ -1,5 +1,3 @@
-//TODO: Text area autoexpand => https://codepen.io/vsync/pen/frudD
-
 import React from 'react';
 import request from './services/mockAPI';
 import IndexContainer from './containers/indexContainer';
@@ -15,9 +13,9 @@ export default class App extends React.Component {
   }
 
   async fetchIndexContents() {
-    await request('bitacora')
+    await request({ language: 'esp', cmd: 'bitacora' })
       .then((cards) => {
-        console.log('App', { cards });
+        // console.log('App', { cards });
         if (this.indexContainer.current) {
           this.indexContainer.current.cardsInfo = cards;
         }
