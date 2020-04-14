@@ -2,7 +2,7 @@ const MEMO_KEY = (id) => `memo-${id}`;
 const STATE_KEY = (id) => `state-${id}`;
 
 const dataManager = {
-  putMemo: (id, memo) => { localStorage[MEMO_KEY(id)] = memo; },
+  putMemo: (id, memo) => { localStorage[MEMO_KEY(id)] = memo.trim(); },
   getMemo: (id) => localStorage[MEMO_KEY(id)] || '',
 
   putState: (id, newState) => {
