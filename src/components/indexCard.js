@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import autosize from 'autosize';
 import Globals from '../globals';
 import dataManager from '../services/dataManager';
 
@@ -11,15 +14,42 @@ const STATUS_PENDING = 'PENDING';
 class IndexCard extends React.Component {
   constructor(props) {
     super(props);
-    const memo = dataManager.getMemo(props.id);
-    const status = memo !== '' ? STATUS_DONE : STATUS_PENDING;
+    const { id } = props;
+    const memo = dataManager.getMemo(id);
+    let { status } = dataManager.getState(id, { status: STATUS_PENDING });
+    if (memo === '') status = STATUS_PENDING;
     this.state = { status, memo };
+    this.textArea = React.createRef();
   }
 
-  onMemoChange = (e) => {
-    const { target: { dataset: { id }, value } } = e;
+  componentDidUpdate() {
+    const { status } = this.state;
+    if (status === STATUS_PENDING && this.textArea.current) {
+      autosize(this.textArea.current);
+    }
+  }
+
+  onMemoChange = (id, e) => {
+    const { target: { value } } = e;
     dataManager.putMemo(id, value);
     this.setState({ memo: value });
+  }
+
+  onDoneClick = (id, e) => {
+    e.preventDefault();
+    const { memo } = this.state;
+    if (memo.trim() > '') {
+      const stt = { status: STATUS_DONE };
+      dataManager.putState(id, stt);
+      this.setState(stt);
+    }
+  }
+
+  onEditClick = (id, e) => {
+    e.preventDefault();
+    const stt = { status: STATUS_PENDING };
+    dataManager.putState(id, stt);
+    this.setState(stt);
   }
 
   get multimediaFrame() {
@@ -49,26 +79,30 @@ class IndexCard extends React.Component {
     switch (status) {
       case STATUS_PENDING:
         return (
-          <div className="pending">
+          <div id={`card-${id}`} className="card-pending">
             <img src={`img/${image}`} alt={`Card for day ${id}`} />
             <p>{text}</p>
             {this.multimediaFrame}
             <div className="memo">
-              <button className="btn done" type="button">✔</button>
-              <textarea placeholder="Captura aquí tus pensamientos" rows="2" data-id={id} onChange={this.onMemoChange} value={memo} />
+              <button className="btn done" type="button" data-id={id} onClick={this.onDoneClick.bind(this, id)}>
+                <FontAwesomeIcon icon={faCheckCircle} />
+              </button>
+              <textarea ref={this.textArea} placeholder="Captura aquí tus pensamientos" rows="2" onChange={this.onMemoChange.bind(this, id)} value={memo} />
             </div>
           </div>
         );
 
       case STATUS_DONE:
         return (
-          <div className="done">
+          <div id={`card-${id}`} className="card-done">
             <img src={`img/${image}`} alt={`Card for day ${id}`} />
             <p>{text}</p>
             {this.multimediaFrame}
             <div className="memo">
-              <button className="btn edit" type="button">Edit</button>
-              <p>{memo}</p>
+              <button className="btn edit" type="button" onClick={this.onEditClick.bind(this, id)}>
+                <FontAwesomeIcon icon={faEdit} />
+              </button>
+              { memo.split('\n').map((line, idx) => <div key={`line-${idx}`} className="text-line">{line}</div>) }
             </div>
           </div>
         );
