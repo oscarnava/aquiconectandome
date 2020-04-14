@@ -10,8 +10,9 @@ class IndexContainer extends React.Component {
     this.state = { cards: [] };
   }
 
+  //TODO: Determine if card should be available for editing.
+
   componentDidUpdate() {
-    console.log('Autosize');
     autosize(document.querySelectorAll('textarea'));
   }
 
@@ -21,7 +22,6 @@ class IndexContainer extends React.Component {
 
   render() {
     const { cards } = this.state;
-    console.log('IndexContainer', { cards });
     return (
       <div className="index-container">
         { cards.map(
