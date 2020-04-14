@@ -1,5 +1,5 @@
 const MEMO_KEY = (id) => `memo-${id}`;
-const STATE_KEY = (id) => `memo-${id}`;
+const STATE_KEY = (id) => `state-${id}`;
 
 const dataManager = {
   putMemo: (id, memo) => { localStorage[MEMO_KEY(id)] = memo; },
