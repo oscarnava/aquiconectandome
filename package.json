@@ -40,8 +40,7 @@
       "last 1 safari version"
     ]
   },
-  "homepag": "/aquiconectando",
-  "homepage": "",
+  "homepage": "/aquiconectando",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
