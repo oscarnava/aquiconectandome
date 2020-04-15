@@ -30,7 +30,7 @@ class IndexContainer extends React.Component {
       }
 
       byCount -= 1;
-      return (byDate <= 0) || (byCount < 0);
+      return (byDate < 0) || (byCount < 0);
     };
 
     return (
