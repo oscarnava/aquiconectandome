@@ -4,20 +4,27 @@ import ReactPlayer from 'react-player';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import autosize from 'autosize';
-import Globals from '../globals';
 import dataManager from '../services/dataManager';
+import Globals from '../globals';
 
-const STATUS_DONE = 'DONE';
-const STATUS_PENDING = 'PENDING';
-// const STATUS_UNAVAILABLE = 'UNAVAILABLE';
+const {
+  SOUND_URL,
+  STATUS_DONE,
+  STATUS_PENDING,
+  STATUS_UNAVAILABLE,
+} = Globals;
+
+const imageURL = (imgName) => `${process.env.PUBLIC_URL}/img/${imgName}`;
+const soundURL = (sndName) => `${process.env.PUBLIC_URL}/${SOUND_URL}/${sndName}`;
 
 class IndexCard extends React.Component {
   constructor(props) {
     super(props);
-    const { id } = props;
+    const { id, hidden } = props;
     const memo = dataManager.getMemo(id);
     let { status } = dataManager.getState(id, { status: STATUS_PENDING });
     if (memo === '') status = STATUS_PENDING;
+    if (hidden) status = STATUS_UNAVAILABLE;
     this.state = { status, memo };
     this.textArea = React.createRef();
   }
@@ -65,7 +72,7 @@ class IndexCard extends React.Component {
     if (audio) {
       return (
         <div className="audio-container multimedia">
-          <ReactPlayer url={`${Globals.SOUND_URL}/${audio}`} controls width="100%" height="100%" />
+          <ReactPlayer url={soundURL(audio)} controls width="100%" height="100%" />
         </div>
       );
     }
@@ -80,7 +87,7 @@ class IndexCard extends React.Component {
       case STATUS_PENDING:
         return (
           <div id={`card-${id}`} className="card-pending">
-            <img src={`img/${image}`} alt={`Card for day ${id}`} />
+            <img src={imageURL(image)} alt={`Card for day ${id}`} />
             <p>{text}</p>
             {this.multimediaFrame}
             <div className="memo">
@@ -95,24 +102,31 @@ class IndexCard extends React.Component {
       case STATUS_DONE:
         return (
           <div id={`card-${id}`} className="card-done">
-            <img src={`img/${image}`} alt={`Card for day ${id}`} />
+            <img src={imageURL(image)} alt={`Card for day ${id}`} />
             <p>{text}</p>
             {this.multimediaFrame}
             <div className="memo">
               <button className="btn edit" type="button" onClick={this.onEditClick.bind(this, id)}>
                 <FontAwesomeIcon icon={faEdit} />
               </button>
+              {/* eslint-disable-next-line react/no-array-index-key */}
               { memo.split('\n').map((line, idx) => <div key={`line-${idx}`} className="text-line">{line}</div>) }
             </div>
           </div>
         );
 
       default:
-        return '';
+        return (<div id={`card-${id}`} className="card-unavailable" />);
     }
   }
 
   render() {
+    const { status } = this.state;
+
+    if (status === STATUS_UNAVAILABLE) {
+      return this.content;
+    }
+
     return (
       <div className="index-card">
         { this.content }
@@ -129,11 +143,13 @@ IndexCard.propTypes = {
   video: PropTypes.string,
   audio: PropTypes.string,
   text: PropTypes.string.isRequired,
+  hidden: PropTypes.bool,
 };
 
 IndexCard.defaultProps = {
   video: null,
   audio: null,
+  hidden: false,
 };
 
 export default IndexCard;
