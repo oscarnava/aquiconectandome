@@ -4,21 +4,67 @@ $def-border-radius: 15px
 $btn-bk-color: #eac214
 $btn-fg-color: #1b5d1b
 
+$wood-theme-back: #472000
+
+.amate
+  .index-container
+    background-image: url(../themes/tile.jpg)
+
+    .index-card
+      background-image: url(../themes/pattern.png)
+      border: solid 1px #eeeeee
+      box-shadow: 10px 10px 5px -6px grey
+
+      img
+        border: solid 2px darkgrey
+
+      p
+        background-color: #ffffff80
+
+    .card-done
+      .memo
+        background-color: #ffffff80
+        border: solid 2px darkgrey
+
+.wood
+  .index-container
+    background-color: darken($wood-theme-back, 10%)
+    background-image: url(../themes/stone-tile.jpg)
+
+    .index-card
+      background-color: $wood-theme-back
+      background-image: url(../themes/wood-tile.jpg)
+      border: solid 1px lighten($wood-theme-back, 20%)
+      box-shadow: 10px 10px 5px -6px black
+
+      img
+        background-color: lighten($wood-theme-back, 80%)
+        border: solid 2px lighten($wood-theme-back, 10%)
+
+      p
+        background-color: lighten($wood-theme-back, 65%)
+        border-color: darken($wood-theme-back, 10%)
+
+    .card-done
+      .memo
+        background-color: lighten($wood-theme-back, 75%)
+        border: solid 2px darken($wood-theme-back, 10%)
+
 .index-container
   display: flex
   flex-wrap: wrap
   justify-content: space-evenly
 
+  .card-unavailable
+    display: none
+
   .index-card
     width: $card-width
     min-height: $card-width * 1.42
     padding: 16px
-    margin: .5rem
+    margin: .5rem .5rem 3rem
     background-color: white
-    background-image: url(../img/pattern.png)
     border-radius: $def-border-radius
-    border: solid 1px #eeeeee
-    box-shadow: 10px 10px 5px -6px grey
     border: solid 2px darkgrey
 
     @media only screen and (max-width: $low-res)
@@ -27,13 +73,11 @@ $btn-fg-color: #1b5d1b
     img
       width: 100%
       border-radius: 10px
-      border: solid 2px darkgrey
 
     p
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
       padding: 1rem
       border-radius: $def-border-radius
-      background-color: #ffffff80
       border: solid 2px darkgrey
 
     .memo
@@ -81,11 +125,6 @@ $btn-fg-color: #1b5d1b
         font-size: 0.8rem
         padding: 1rem
         border-radius: $def-border-radius
-        background-color: #ffffff80
-        border: solid 2px darkgrey
-
-    .card-unavailable
-      display: none
 
     .video-container
       position: relative

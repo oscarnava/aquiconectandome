@@ -24,7 +24,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app wood">
         <IndexContainer ref={this.indexContainer} />
       </div>
     );
