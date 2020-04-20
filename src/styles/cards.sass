@@ -4,7 +4,9 @@ $def-border-radius: 15px
 $btn-bk-color: #eac214
 $btn-fg-color: #1b5d1b
 
-$wood-theme-back: #472000
+$wood-theme-color: #472000
+$day-theme-color: #ddd
+$night-theme-color: #111
 
 .amate
   .index-container
@@ -12,48 +14,77 @@ $wood-theme-back: #472000
 
     .index-card
       background-image: url(../themes/pattern.png)
-      border: solid 1px #eeeeee
+      border-color: #eeeeee
       box-shadow: 10px 10px 5px -6px grey
 
       img
-        border: solid 2px darkgrey
+        border-color: darkgrey
+        background-color: #ffffff70
 
       p
         background-color: #ffffff80
 
-    .card-done
-      .memo
-        background-color: #ffffff80
-        border: solid 2px darkgrey
+      .card-done
+        .memo
+          background-color: #ffffff80
+          border-color: darkgrey
 
 .wood
   .index-container
-    background-color: darken($wood-theme-back, 10%)
+    background-color: darken($wood-theme-color, 10%)
     background-image: url(../themes/stone-tile.jpg)
 
     .index-card
-      background-color: $wood-theme-back
+      background-color: $wood-theme-color
       background-image: url(../themes/wood-tile.jpg)
-      border: solid 1px lighten($wood-theme-back, 20%)
+      border-color: lighten($wood-theme-color, 20%)
       box-shadow: 10px 10px 5px -6px black
 
       img
-        background-color: lighten($wood-theme-back, 80%)
-        border: solid 2px lighten($wood-theme-back, 10%)
+        background-color: lighten($wood-theme-color, 80%)
+        border-color: lighten($wood-theme-color, 10%)
 
       p
-        background-color: lighten($wood-theme-back, 65%)
-        border-color: darken($wood-theme-back, 10%)
+        background-color: lighten($wood-theme-color, 65%)
+        border-color: darken($wood-theme-color, 10%)
 
-    .card-done
-      .memo
-        background-color: lighten($wood-theme-back, 75%)
-        border: solid 2px darken($wood-theme-back, 10%)
+      .card-done
+        .memo
+          background-color: lighten($wood-theme-color, 75%)
+          border-color: darken($wood-theme-color, 10%)
+
+.night
+  .index-container
+    background-color: darken($night-theme-color, 10%)
+    background-image: url(../themes/night-texture.jpg)
+
+    .index-card
+      background-color: $night-theme-color
+      border-color: lighten($night-theme-color, 20%)
+      box-shadow: 10px 10px 5px -6px black
+
+      img
+        background-color: lighten($night-theme-color, 80%)
+        border-color: lighten($night-theme-color, 10%)
+
+      p
+        background-color: lighten($night-theme-color, 65%)
+        border-color: darken($night-theme-color, 10%)
+
+      .card-done
+        .memo
+          background-color: lighten($night-theme-color, 75%)
+          border-color: darken($night-theme-color, 10%)
+
+.day
+  .index-container
+    background-image: url(../themes/day-texture.jpg)
 
 .index-container
   display: flex
   flex-wrap: wrap
   justify-content: space-evenly
+  background-color: darken($day-theme-color, 20%)
 
   .card-unavailable
     display: none
@@ -63,7 +94,7 @@ $wood-theme-back: #472000
     min-height: $card-width * 1.42
     padding: 16px
     margin: .5rem .5rem 3rem
-    background-color: white
+    background-color: $day-theme-color
     border-radius: $def-border-radius
     border: solid 2px darkgrey
 
@@ -73,12 +104,15 @@ $wood-theme-back: #472000
     img
       width: 100%
       border-radius: 10px
+      border: solid 2px darkgrey
+      background-color: lighten($day-theme-color, 20%)
 
     p
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
       padding: 1rem
       border-radius: $def-border-radius
       border: solid 2px darkgrey
+      background-color: lighten($day-theme-color, 20%)
 
     .memo
       position: relative
@@ -125,6 +159,8 @@ $wood-theme-back: #472000
         font-size: 0.8rem
         padding: 1rem
         border-radius: $def-border-radius
+        border: solid 2px darkgrey
+        background-color: lighten($day-theme-color, 20%)
 
     .video-container
       position: relative
