@@ -8,29 +8,29 @@ export default class CubeMenu extends Component {
     this.state = { active: 0 };
   }
 
-  get keys() {
+  get values() {
     // eslint-disable-next-line react/destructuring-assignment
-    if (!this.$keys) this.$keys = Object.keys(this.props.options);
-    return this.$keys;
+    if (!this.$vals) this.$vals = Object.keys(this.props.options);
+    return this.$vals;
   }
 
   onClick = () => {
     const { options, onSelect } = this.props;
     let { active } = this.state;
-    active = (active + 1) % this.keys.length;
+    active = (active + 1) % this.values.length;
     this.setState({ active });
-    onSelect(this.keys[active], active, options[active]);
+    onSelect(this.values[active], active, options[active]);
   }
 
   render() {
     const { options, width, height } = this.props;
     const { active } = this.state;
-    const delta = 360 / this.keys.length;
+    const delta = 360 / this.values.length;
 
     return (
       <div className="cube-menu" style={{ width, height }} onClick={this.onClick}>
         <div className="cube" style={{ transform: `translateZ(-100px) rotateY(-${active * delta}deg)` }}>
-          { this.keys.map((key, i) => (
+          { this.values.map((key, i) => (
             <div
               key={`face-${key}`}
               className={`cube-face cube-face-${key}`}
