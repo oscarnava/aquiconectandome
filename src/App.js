@@ -1,5 +1,6 @@
 import React from 'react';
 import request from './services/mockAPI';
+import dataManager from './services/dataManager';
 import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
@@ -22,7 +23,7 @@ const themeOpts = {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { theme: 'amate' };
+    this.state = dataManager.getState('App', { theme: 'amate' });
     this.indexContainer = React.createRef();
   }
 
@@ -32,6 +33,7 @@ export default class App extends React.Component {
 
   onMenuSelect = (theme) => {
     this.setState({ theme });
+    dataManager.putState('App', { theme });
   }
 
   async fetchIndexContents() {
@@ -49,6 +51,7 @@ export default class App extends React.Component {
     return (
       <div className={`app ${theme}`}>
         <CubeMenu
+          selected={theme}
           options={themeOpts.esp}
           width="6rem"
           height="1.8rem"
