@@ -135,8 +135,6 @@ class IndexCard extends React.Component {
   }
 }
 
-// Mi mayor temor es perder a mi güerita 👧
-
 IndexCard.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
