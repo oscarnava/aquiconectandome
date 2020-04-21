@@ -5,7 +5,7 @@ import '../styles/cubeMenu.sass';
 export default class CubeMenu extends Component {
   constructor(props) {
     super(props);
-    this.state = { active: 0 };
+    this.state = { active: Math.max(this.values.indexOf(props.selected), 0) };
   }
 
   get values() {
@@ -47,12 +47,14 @@ export default class CubeMenu extends Component {
 
 CubeMenu.propTypes = {
   options: PropTypes.object.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  selected: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
-  onSelect: PropTypes.func.isRequired,
 };
 
 CubeMenu.defaultProps = {
+  selected: '',
   width: '200px',
   height: '200px',
 };
