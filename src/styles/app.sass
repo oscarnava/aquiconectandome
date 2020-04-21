@@ -1,0 +1,32 @@
+$amate-color: #e9a976
+$wood-color: #472000
+$day-color: #ddd
+$night-color: #111
+
+.cube-menu
+  position: absolute
+  top: 5px
+  right: 10px
+
+.cube-face
+  font-size: 1.2rem
+  font-weight: bold
+  border: solid 2px black
+
+.cube-face-amate
+  background-image: url(../themes/pattern.png)
+  border-color: darken($amate-color, 30%)
+
+.cube-face-wood
+  color: white
+  background-image: url(../themes/wood-tile.jpg)
+  border-color: darken($wood-color, 30%)
+
+.cube-face-day
+  background-color: $day-color
+  border-color: darken($wood-color, 30%)
+
+.cube-face-night
+  color: white
+  background-color: $night-color
+  border-color: lighten($night-color, 30%)
