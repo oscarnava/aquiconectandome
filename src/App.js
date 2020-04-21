@@ -4,6 +4,21 @@ import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
 
+const themeOpts = {
+  esp: {
+    amate: 'Amate',
+    wood: 'Madera',
+    day: 'Día',
+    night: 'Noche',
+  },
+  eng: {
+    amate: 'Amate',
+    wood: 'Wood',
+    day: 'Day',
+    night: 'Night',
+  },
+};
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,9 +30,9 @@ export default class App extends React.Component {
     this.fetchIndexContents();
   }
 
-  onMenuSelect = (option) => {
+  onMenuSelect = (option, idx) => {
     console.log({ option });
-    this.setState({ theme: option.toLowerCase() });
+    this.setState({ theme: option });
   }
 
   async fetchIndexContents() {
@@ -35,8 +50,8 @@ export default class App extends React.Component {
     return (
       <div className={`app ${theme}`}>
         <CubeMenu
-          options={['Amate', 'Wood', 'Day', 'Night']}
-          width="200px"
+          options={themeOpts.esp}
+          width="6rem"
           height="1.8rem"
           onSelect={this.onMenuSelect}
         />
