@@ -84,8 +84,8 @@ class IndexCard extends React.Component {
     const { status, memo } = this.state;
     const { id, image, header, text } = this.props;
 
-    const makeCard = (className, contents) => (
-      <details id={`card-${id}`} className={className} open>
+    const makeCard = (className, isOpen, contents) => (
+      <details id={`card-${id}`} className={className} open={isOpen}>
         <summary>{`Día ${id}. ${header}`}</summary>
         <img src={imageURL(image)} alt={`Card for day ${id}`} />
         <p>{text}</p>
@@ -98,7 +98,7 @@ class IndexCard extends React.Component {
 
     switch (status) {
       case STATUS_PENDING:
-        return makeCard('card-pending', (
+        return makeCard('card-pending', true, (
           <>
             <button className="btn done" type="button" data-id={id} onClick={this.onDoneClick.bind(this, id)}>
               <FontAwesomeIcon icon={faCheckCircle} />
@@ -108,7 +108,7 @@ class IndexCard extends React.Component {
         ));
 
       case STATUS_DONE:
-        return makeCard('card-done', (
+        return makeCard('card-done', false, (
           <>
             <button className="btn edit" type="button" onClick={this.onEditClick.bind(this, id)}>
               <FontAwesomeIcon icon={faEdit} />
@@ -141,9 +141,10 @@ class IndexCard extends React.Component {
 IndexCard.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  header: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   video: PropTypes.string,
   audio: PropTypes.string,
-  text: PropTypes.string.isRequired,
   hidden: PropTypes.bool,
 };
 
