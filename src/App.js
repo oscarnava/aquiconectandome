@@ -30,9 +30,8 @@ export default class App extends React.Component {
     this.fetchIndexContents();
   }
 
-  onMenuSelect = (option, idx) => {
-    console.log({ option });
-    this.setState({ theme: option });
+  onMenuSelect = (theme) => {
+    this.setState({ theme });
   }
 
   async fetchIndexContents() {
