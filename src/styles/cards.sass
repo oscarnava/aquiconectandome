@@ -17,6 +17,9 @@ $night-theme-color: #111
       border-color: #eeeeee
       box-shadow: 10px 10px 5px -6px grey
 
+      summary
+        color: brown
+
       img
         border-color: darkgrey
         background-color: #ffffff70
@@ -40,18 +43,23 @@ $night-theme-color: #111
       border-color: lighten($wood-theme-color, 20%)
       box-shadow: 10px 10px 5px -6px black
 
+      summary
+        color: #fdff92
+        background-color: #ffffff20
+        border-color: lighten($wood-theme-color, 30%)
+
       img
         background-color: lighten($wood-theme-color, 80%)
-        border-color: lighten($wood-theme-color, 10%)
+        border-color: lighten($wood-theme-color, 30%)
 
       p
         background-color: lighten($wood-theme-color, 65%)
-        border-color: darken($wood-theme-color, 10%)
+        border-color: lighten($wood-theme-color, 30%)
 
       .card-done
         .memo
           background-color: lighten($wood-theme-color, 75%)
-          border-color: darken($wood-theme-color, 10%)
+          border-color: lighten($wood-theme-color, 30%)
 
 .night
   .index-container
@@ -62,6 +70,11 @@ $night-theme-color: #111
       background-color: $night-theme-color
       border-color: lighten($night-theme-color, 20%)
       box-shadow: 10px 10px 5px -6px black
+
+      summary
+        color: white
+        background-color: #ffffff20
+        border-color: lighten($night-theme-color, 10%)
 
       img
         background-color: lighten($night-theme-color, 80%)
@@ -80,21 +93,28 @@ $night-theme-color: #111
   .index-container
     background-image: url(../themes/day-texture.jpg)
 
+    .index-card
+      summary
+        color: black
+
 .index-container
   display: flex
   flex-wrap: wrap
   justify-content: space-evenly
+  align-items: flex-start
+  align-content: flex-start
   background-color: darken($day-theme-color, 20%)
   padding-top: 1.5rem
+  min-height: 100vh
 
   .card-unavailable
     display: none
 
   .index-card
     width: $card-width
-    min-height: $card-width * 1.42
+    // min-height: $card-width * 1.42
     padding: 16px
-    margin: .5rem .5rem 3rem
+    margin: .5rem .5rem
     background-color: $day-theme-color
     border-radius: $def-border-radius
     border: solid 2px darkgrey
@@ -102,11 +122,27 @@ $night-theme-color: #111
     @media only screen and (max-width: $low-res)
       width: 90vw
 
+    summary
+      color: red
+      background-color: #ffffff70
+      border: solid 2px darkgrey
+      border-radius: 10px
+      font-size: .9rem
+      font-weight: 500
+      padding: .1rem .2rem .1rem 1.5rem
+      cursor: pointer
+      user-select: none
+      outline: none
+
+      &::first-line
+        text-indent: -1rem
+
     img
       width: 100%
       border-radius: 10px
       border: solid 2px darkgrey
       background-color: lighten($day-theme-color, 20%)
+      margin-top: .5rem
 
     p
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif

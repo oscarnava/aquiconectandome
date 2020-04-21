@@ -82,38 +82,41 @@ class IndexCard extends React.Component {
 
   get content() {
     const { status, memo } = this.state;
-    const { id, image, text } = this.props;
+    const { id, image, header, text } = this.props;
+
+    const makeCard = (className, contents) => (
+      <details id={`card-${id}`} className={className} open>
+        <summary>{`Día ${id}. ${header}`}</summary>
+        <img src={imageURL(image)} alt={`Card for day ${id}`} />
+        <p>{text}</p>
+        {this.multimediaFrame}
+        <div className="memo">
+          {contents}
+        </div>
+      </details>
+    );
+
     switch (status) {
       case STATUS_PENDING:
-        return (
-          <div id={`card-${id}`} className="card-pending">
-            <img src={imageURL(image)} alt={`Card for day ${id}`} />
-            <p>{text}</p>
-            {this.multimediaFrame}
-            <div className="memo">
-              <button className="btn done" type="button" data-id={id} onClick={this.onDoneClick.bind(this, id)}>
-                <FontAwesomeIcon icon={faCheckCircle} />
-              </button>
-              <textarea ref={this.textArea} placeholder="Captura aquí tus pensamientos" rows="2" onChange={this.onMemoChange.bind(this, id)} value={memo} />
-            </div>
-          </div>
-        );
+        return makeCard('card-pending', (
+          <>
+            <button className="btn done" type="button" data-id={id} onClick={this.onDoneClick.bind(this, id)}>
+              <FontAwesomeIcon icon={faCheckCircle} />
+            </button>
+            <textarea ref={this.textArea} placeholder="Captura aquí tus pensamientos" rows="2" onChange={this.onMemoChange.bind(this, id)} value={memo} />
+          </>
+        ));
 
       case STATUS_DONE:
-        return (
-          <div id={`card-${id}`} className="card-done">
-            <img src={imageURL(image)} alt={`Card for day ${id}`} />
-            <p>{text}</p>
-            {this.multimediaFrame}
-            <div className="memo">
-              <button className="btn edit" type="button" onClick={this.onEditClick.bind(this, id)}>
-                <FontAwesomeIcon icon={faEdit} />
-              </button>
-              {/* eslint-disable-next-line react/no-array-index-key */}
-              { memo.split('\n').map((line, idx) => <div key={`line-${idx}`} className="text-line">{line}</div>) }
-            </div>
-          </div>
-        );
+        return makeCard('card-done', (
+          <>
+            <button className="btn edit" type="button" onClick={this.onEditClick.bind(this, id)}>
+              <FontAwesomeIcon icon={faEdit} />
+            </button>
+            {/* eslint-disable-next-line react/no-array-index-key */}
+            { memo.split('\n').map((line, idx) => <div key={`line-${idx}`} className="text-line">{line}</div>) }
+          </>
+        ));
 
       default:
         return (<div id={`card-${id}`} className="card-unavailable" />);

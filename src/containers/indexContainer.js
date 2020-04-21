@@ -37,9 +37,9 @@ class IndexContainer extends React.Component {
       <div className="index-container">
         { cards.map(
           ({
-            id, img, text, video, audio,
+            id, img, header, text, video, audio,
           // eslint-disable-next-line no-plusplus
-          }) => <IndexCard key={id} id={id} image={img} text={text} video={video} audio={audio} hidden={getHidden(id)} />,
+          }) => <IndexCard key={id} id={id} image={img} header={header} text={text} video={video} audio={audio} hidden={getHidden(id)} />,
         ) }
       </div>
     );
