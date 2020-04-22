@@ -46,6 +46,7 @@ export default class CubeMenu extends Component {
 }
 
 CubeMenu.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   options: PropTypes.object.isRequired,
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.string,

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import dataManager from '../services/dataManager';
 import IndexCard from '../components/indexCard';
 import '../styles/cards.sass';
@@ -45,9 +44,5 @@ class IndexContainer extends React.Component {
     );
   }
 }
-
-IndexContainer.propTypes = {
-  cards: PropTypes.array,
-};
 
 export default IndexContainer;
