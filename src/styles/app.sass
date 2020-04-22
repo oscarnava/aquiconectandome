@@ -16,11 +16,12 @@ $night-color: #111
   border: solid 2px black
   border-radius: 5px
   white-space: pre
+  padding-top: .3rem
 
 .cube-face-amate
   color: brown
   background-image: url(../themes/pattern.png)
-  border-color: darken($amate-color, 50%)
+  border-color: #0d1599
 
 .cube-face-wood
   color: #fdff92
@@ -35,3 +36,29 @@ $night-color: #111
   color: white
   background-color: $night-color
   border-color: lighten($night-color, 30%)
+
+header
+  position: absolute
+  top: 5px
+  left: 1rem
+  font-size: 2.3rem
+  font-family: monospace
+  font-weight: bold
+  letter-spacing: 3px
+  padding: 0 10px
+  border-radius: 10px
+
+  &.amate
+    color: #1b3d8a
+    background-image: url(../themes/pattern.png)
+
+  &.wood
+    color: #fdff92
+    background-image: url(../themes/wood-tile.jpg)
+    border: solid 2px #e06500
+
+  &.day
+    color: black
+
+  &.night
+    color: white

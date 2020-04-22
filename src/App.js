@@ -49,16 +49,17 @@ export default class App extends React.Component {
   render() {
     const { theme } = this.state;
     return (
-      <div className={`app ${theme}`}>
+      <main className={`app ${theme}`}>
+        <header className={theme}>Mi bitácora</header>
         <CubeMenu
           selected={theme}
           options={themeOpts.esp}
-          width="4.7rem"
-          height="3rem"
+          width="5.1rem"
+          height="3.3rem"
           onSelect={this.onMenuSelect}
         />
         <IndexContainer ref={this.indexContainer} />
-      </div>
+      </main>
     );
   }
 }

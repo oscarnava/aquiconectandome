@@ -86,7 +86,7 @@ class IndexCard extends React.Component {
 
     const makeCard = (className, isPending, contents) => (
       <details id={`card-${id}`} className={className} open={isPending}>
-        <summary>{`${isPending ? '✍' : ''} Entrada: ${header}`}</summary>
+        <summary>{`${isPending ? '✍' : '📘'} Entrada: ${header}`}</summary>
         <img src={imageURL(image)} alt={`Card for day ${id}`} />
         <p>{text}</p>
         {this.multimediaFrame}
