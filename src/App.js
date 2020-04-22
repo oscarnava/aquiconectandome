@@ -7,16 +7,16 @@ import './styles/app.sass';
 
 const themeOpts = {
   esp: {
-    amate: 'Tema: Amate',
-    wood: 'Tema: Madera',
-    day: 'Tema: Día',
-    night: 'Tema: Noche',
+    amate: '🕸\nAmate',
+    wood: '🌲\nMadera',
+    day: '🌞\nDía',
+    night: '🌙\nNoche',
   },
   eng: {
-    amate: 'Theme: Amate',
-    wood: 'Theme: Wood',
-    day: 'Theme: Day',
-    night: 'Theme: Night',
+    amate: '🕸\nAmate',
+    wood: '🌲\nWood',
+    day: '🌞\nDay',
+    night: '🌙\nNight',
   },
 };
 
@@ -53,7 +53,7 @@ export default class App extends React.Component {
         <CubeMenu
           selected={theme}
           options={themeOpts.esp}
-          width="5rem"
+          width="4.7rem"
           height="3rem"
           onSelect={this.onMenuSelect}
         />

@@ -84,9 +84,9 @@ class IndexCard extends React.Component {
     const { status, memo } = this.state;
     const { id, image, header, text } = this.props;
 
-    const makeCard = (className, isOpen, contents) => (
-      <details id={`card-${id}`} className={className} open={isOpen}>
-        <summary>{`Día ${id}. ${header}`}</summary>
+    const makeCard = (className, isPending, contents) => (
+      <details id={`card-${id}`} className={className} open={isPending}>
+        <summary>{`${isPending ? '✍' : ''} Entrada: ${header}`}</summary>
         <img src={imageURL(image)} alt={`Card for day ${id}`} />
         <p>{text}</p>
         {this.multimediaFrame}
@@ -119,7 +119,7 @@ class IndexCard extends React.Component {
         ));
 
       default:
-        return (<div id={`card-${id}`} className="card-unavailable" />);
+        return (<></>);
     }
   }
 
