@@ -1,3 +1,4 @@
+$low-res: 650px
 $amate-color: #e9a976
 $wood-color: #472000
 $day-color: #ddd
@@ -38,27 +39,37 @@ $night-color: #111
   border-color: lighten($night-color, 30%)
 
 header
-  position: absolute
+  position: static
   top: 5px
   left: 1rem
   font-size: 2.3rem
   font-family: monospace
   font-weight: bold
   letter-spacing: 3px
+  text-align: center
   padding: 0 10px
-  border-radius: 10px
+  border: solid 2px black
 
   &.amate
     color: #1b3d8a
     background-image: url(../themes/pattern.png)
+    border-color: #0d1599
 
   &.wood
     color: #fdff92
     background-image: url(../themes/wood-tile.jpg)
-    border: solid 2px #e06500
+    border-color: #e06500
 
   &.day
     color: black
+    background-color: $day-color
+    border-color: darkgrey
 
   &.night
     color: white
+    background-color: $night-color
+    border-color: lighten($night-color, 30%)
+
+  @media only screen and (max-width: $low-res)
+    position: absolute
+    border-radius: 10px
