@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import autosize from 'autosize';
 import dataManager from '../services/dataManager';
+import labelManager from '../services/labelManager';
 import Globals from '../globals';
 
 const {
@@ -82,11 +83,11 @@ class IndexCard extends React.Component {
 
   get content() {
     const { status, memo } = this.state;
-    const { id, image, header, text } = this.props;
+    const { id, language, image, header, text } = this.props;
 
     const makeCard = (className, isPending, contents) => (
       <details id={`card-${id}`} className={className} open={isPending}>
-        <summary>{`${isPending ? '✍' : '📘'} Entrada: ${header}`}</summary>
+        <summary>{`${isPending ? '✍' : '📘'} ${labelManager('Entrada', language)}: ${header}`}</summary>
         <img src={imageURL(image)} alt={`Card for day ${id}`} />
         <p>{text}</p>
         {this.multimediaFrame}
@@ -140,6 +141,7 @@ class IndexCard extends React.Component {
 
 IndexCard.propTypes = {
   id: PropTypes.number.isRequired,
+  language: PropTypes.string,
   image: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
@@ -149,6 +151,7 @@ IndexCard.propTypes = {
 };
 
 IndexCard.defaultProps = {
+  language: 'esp',
   video: [],
   audio: [],
   hidden: false,

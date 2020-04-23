@@ -4,8 +4,9 @@ import dataManager from './services/dataManager';
 import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
+import labelManager from './services/labelManager';
 
-const language = 'esp';
+const language = 'eng';
 
 const themeOpts = {
   esp: {
@@ -52,10 +53,10 @@ export default class App extends React.Component {
     const { theme } = this.state;
     return (
       <main className={`app ${theme}`}>
-        <header className={theme}>Mi bitácora</header>
+        <header className={theme}>{labelManager('Mi bitácora', language)}</header>
         <CubeMenu
           selected={theme}
-          options={themeOpts.esp}
+          options={themeOpts[language]}
           width="5.1rem"
           height="3.3rem"
           onSelect={this.onMenuSelect}
