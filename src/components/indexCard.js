@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import autosize from 'autosize';
 import dataManager from '../services/dataManager';
-import labelManager from '../services/labelManager';
+import i18n from '../services/i18n';
 import Globals from '../globals';
 
 const {
@@ -87,7 +87,7 @@ class IndexCard extends React.Component {
 
     const makeCard = (className, isPending, contents) => (
       <details id={`card-${id}`} className={className} open={isPending}>
-        <summary>{`${isPending ? '✍' : '📘'} ${labelManager('Entrada', language)}: ${header}`}</summary>
+        <summary>{`${isPending ? '✍' : '📘'} ${i18n('Entrada', language)}: ${header}`}</summary>
         <img src={imageURL(image)} alt={`Card for day ${id}`} />
         <p>{text}</p>
         {this.multimediaFrame}

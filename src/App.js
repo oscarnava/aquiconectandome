@@ -1,10 +1,10 @@
 import React from 'react';
 import request from './services/mockAPI';
 import dataManager from './services/dataManager';
+import i18n from './services/i18n';
 import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
-import labelManager from './services/labelManager';
 
 const language = 'eng';
 
@@ -53,10 +53,10 @@ export default class App extends React.Component {
     const { theme } = this.state;
     return (
       <main className={`app ${theme}`}>
-        <header className={theme}>{labelManager('Mi bitácora', language)}</header>
+        <header className={theme}>{i18n('Mi bitácora', language)}</header>
         <CubeMenu
           selected={theme}
-          options={themeOpts[language]}
+          options={themeOpts[language] || themeOpts.esp}
           width="5.1rem"
           height="3.3rem"
           onSelect={this.onMenuSelect}
