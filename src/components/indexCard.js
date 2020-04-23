@@ -151,7 +151,7 @@ IndexCard.propTypes = {
 };
 
 IndexCard.defaultProps = {
-  language: 'esp',
+  language: 'es',
   video: [],
   audio: [],
   hidden: false,

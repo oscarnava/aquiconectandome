@@ -10,7 +10,7 @@ class IndexContainer extends React.Component {
     this.state = { cards: [] };
   }
 
-  //TODO: Determine if card should be available for editing.
+  //DONE: Determine if card should be available for editing.
 
   set cardsInfo(cards) {
     this.setState({ cards });
@@ -24,6 +24,8 @@ class IndexContainer extends React.Component {
     let byCount = 5;
 
     const isHidden = (id) => {
+      // return false;
+
       const done = dataManager.cardDone(id);
       byDate -= 1;
       if (done) {
@@ -49,4 +51,4 @@ class IndexContainer extends React.Component {
 export default IndexContainer;
 
 IndexContainer.propTypes = { language: PropTypes.string };
-IndexContainer.defaultProps = { language: 'esp' };
+IndexContainer.defaultProps = { language: 'es' };

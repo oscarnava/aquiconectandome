@@ -6,16 +6,18 @@ import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
 
-const language = 'eng';
+const language = /^([^-]+)(-.*)?$/.exec(navigator.language)[1].toLowerCase();
+
+console.log({ language });
 
 const themeOpts = {
-  esp: {
+  es: {
     amate: '🕸\nAmate',
     wood: '🌲\nMadera',
     day: '🌞\nDía',
     night: '🌙\nNoche',
   },
-  eng: {
+  en: {
     amate: '🕸\nAmate',
     wood: '🌲\nWood',
     day: '🌞\nDay',
