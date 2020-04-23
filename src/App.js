@@ -5,6 +5,8 @@ import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
 
+const language = 'esp';
+
 const themeOpts = {
   esp: {
     amate: '🕸\nAmate',
@@ -37,7 +39,7 @@ export default class App extends React.Component {
   }
 
   async fetchIndexContents() {
-    await request({ language: 'esp', cmd: 'bitacora' })
+    await request({ cmd: 'bitacora', language })
       .then((cards) => {
         // console.log('App', { cards });
         if (this.indexContainer.current) {
@@ -58,7 +60,7 @@ export default class App extends React.Component {
           height="3.3rem"
           onSelect={this.onMenuSelect}
         />
-        <IndexContainer ref={this.indexContainer} />
+        <IndexContainer ref={this.indexContainer} language={language} />
       </main>
     );
   }

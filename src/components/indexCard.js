@@ -61,24 +61,24 @@ class IndexCard extends React.Component {
 
   get multimediaFrame() {
     const { video, audio } = this.props;
-    if (video) {
-      return (
-        <div className="video-container multimedia">
-          <ReactPlayer url={`https://www.youtube.com/watch?v=${video}`} controls width="100%" height="100%" />
-        </div>
-      );
-    }
-
-    if (audio) {
-      return (
-        <div className="audio-container multimedia">
-          <ReactPlayer url={soundURL(audio)} controls width="100%" height="100%" />
-        </div>
-      );
-    }
-
-    return '';
+    return (
+      <>
+        { video.map((id) => (
+          <div key={id} className="video-container multimedia">
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} controls width="100%" height="100%" />
+          </div>
+        ))}
+        {
+          audio.map((id) => (
+            <div key={id} className="audio-container multimedia">
+              <ReactPlayer url={soundURL(audio)} controls width="100%" height="100%" />
+            </div>
+          ))
+        }
+      </>
+    );
   }
+
 
   get content() {
     const { status, memo } = this.state;
@@ -143,14 +143,14 @@ IndexCard.propTypes = {
   image: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  video: PropTypes.string,
-  audio: PropTypes.string,
+  video: PropTypes.arrayOf(PropTypes.string),
+  audio: PropTypes.arrayOf(PropTypes.string),
   hidden: PropTypes.bool,
 };
 
 IndexCard.defaultProps = {
-  video: null,
-  audio: null,
+  video: [],
+  audio: [],
   hidden: false,
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import dataManager from '../services/dataManager';
 import IndexCard from '../components/indexCard';
 import '../styles/cards.sass';
@@ -16,12 +17,13 @@ class IndexContainer extends React.Component {
   }
 
   render() {
+    const { language } = this.props;
     const { cards } = this.state;
     // eslint-disable-next-line no-bitwise
     let byDate = (dataManager.getToday() - dataManager.getStartDay() + 2) >> 1;
     let byCount = 5;
 
-    const getHidden = (id) => {
+    const isHidden = (id) => {
       const done = dataManager.cardDone(id);
       byDate -= 1;
       if (done) {
@@ -34,15 +36,17 @@ class IndexContainer extends React.Component {
 
     return (
       <div className="index-container">
-        { cards.map(
-          ({
-            id, img, header, text, video, audio,
-          // eslint-disable-next-line no-plusplus
-          }) => <IndexCard key={id} id={id} image={img} header={header} text={text} video={video} audio={audio} hidden={getHidden(id)} />,
-        ) }
+        { cards.map((card) => {
+          const { id } = card;
+          const { img, head, text, video, audio } = Object.assign(card, card[`$_${language}`]);
+          return (<IndexCard key={id} id={id} image={img} header={head} text={text} video={video} audio={audio} hidden={isHidden(id)} />);
+        }) }
       </div>
     );
   }
 }
 
 export default IndexContainer;
+
+IndexContainer.propTypes = { language: PropTypes.string };
+IndexContainer.defaultProps = { language: 'esp' };
