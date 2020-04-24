@@ -17,7 +17,7 @@ const dataManager = {
     const state = Object.assign(current ? JSON.parse(current) : {}, newState);
     localStorage[key] = JSON.stringify(state);
   },
-  getState: (id, def) => (localStorage[STATE_KEY(id)] ? JSON.parse(localStorage[STATE_KEY(id)]) : def),
+  getState: (id, def = {}) => Object.assign(def, localStorage[STATE_KEY(id)] ? JSON.parse(localStorage[STATE_KEY(id)]) : null),
 
   getStartDay() {
     if (!localStorage[START_DATE_KEY]) {
