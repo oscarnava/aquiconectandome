@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import dataManager from '../services/dataManager';
 import IndexCard from '../components/indexCard';
 import '../styles/cards.sass';
+import Globals from '../globals';
+
+const { DEFAULT_LANGUAGE } = Globals;
 
 class IndexContainer extends React.Component {
   constructor(props) {
@@ -51,4 +54,4 @@ class IndexContainer extends React.Component {
 export default IndexContainer;
 
 IndexContainer.propTypes = { language: PropTypes.string };
-IndexContainer.defaultProps = { language: 'es' };
+IndexContainer.defaultProps = { language: DEFAULT_LANGUAGE };

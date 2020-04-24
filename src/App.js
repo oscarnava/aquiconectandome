@@ -5,10 +5,9 @@ import i18n from './services/i18n';
 import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
+import Globals from './globals';
 
-const language = /^([^-]+)(-.*)?$/.exec(navigator.language)[1].toLowerCase();
-
-console.log({ language });
+const { DEFAULT_LANGUAGE } = Globals;
 
 const themeOpts = {
   es: {
@@ -42,9 +41,8 @@ export default class App extends React.Component {
   }
 
   async fetchIndexContents() {
-    await request({ cmd: 'bitacora', language })
+    await request({ cmd: 'bitacora', DEFAULT_LANGUAGE })
       .then((cards) => {
-        // console.log('App', { cards });
         if (this.indexContainer.current) {
           this.indexContainer.current.cardsInfo = cards;
         }
@@ -55,15 +53,15 @@ export default class App extends React.Component {
     const { theme } = this.state;
     return (
       <main className={`app ${theme}`}>
-        <header className={theme}>{i18n('Mi bitácora', language)}</header>
+        <header className={theme}>{i18n('AppName')}</header>
         <CubeMenu
           selected={theme}
-          options={themeOpts[language] || themeOpts.esp}
+          options={themeOpts[DEFAULT_LANGUAGE] || themeOpts[DEFAULT_LANGUAGE]}
           width="5.1rem"
           height="3.3rem"
           onSelect={this.onMenuSelect}
         />
-        <IndexContainer ref={this.indexContainer} language={language} />
+        <IndexContainer ref={this.indexContainer} language={DEFAULT_LANGUAGE} />
       </main>
     );
   }

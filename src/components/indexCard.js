@@ -13,6 +13,7 @@ const {
   STATUS_DONE,
   STATUS_PENDING,
   STATUS_UNAVAILABLE,
+  DEFAULT_LANGUAGE,
 } = Globals;
 
 const imageURL = (imgName) => `${process.env.PUBLIC_URL}/img/${imgName}`;
@@ -104,7 +105,7 @@ class IndexCard extends React.Component {
             <button className="btn done" type="button" data-id={id} onClick={this.onDoneClick.bind(this, id)}>
               <FontAwesomeIcon icon={faCheckCircle} />
             </button>
-            <textarea ref={this.textArea} placeholder="Captura aquí tus pensamientos" rows="2" onChange={this.onMemoChange.bind(this, id)} value={memo} />
+            <textarea ref={this.textArea} placeholder={i18n('placeholder', language)} rows="2" onChange={this.onMemoChange.bind(this, id)} value={memo} />
           </>
         ));
 
@@ -151,7 +152,7 @@ IndexCard.propTypes = {
 };
 
 IndexCard.defaultProps = {
-  language: 'es',
+  language: DEFAULT_LANGUAGE,
   video: [],
   audio: [],
   hidden: false,
