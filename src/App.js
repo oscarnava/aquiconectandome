@@ -27,7 +27,7 @@ const themeOpts = {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = dataManager.getState('App', { theme: 'amate' });
+    this.state = dataManager.getState('App', { cards: [], theme: 'amate' });
     this.indexContainer = React.createRef();
   }
 
@@ -43,25 +43,24 @@ export default class App extends React.Component {
   async fetchIndexContents() {
     await request({ cmd: 'bitacora', DEFAULT_LANGUAGE })
       .then((cards) => {
-        if (this.indexContainer.current) {
-          this.indexContainer.current.cardsInfo = cards;
-        }
+        this.setState({ cards });
       });
   }
 
   render() {
-    const { theme } = this.state;
+    const { cards, theme } = this.state;
+    console.log({ state: this.state });
     return (
       <main className={`app ${theme}`}>
         <header className={theme}>{i18n('AppName')}</header>
         <CubeMenu
           selected={theme}
-          options={themeOpts[DEFAULT_LANGUAGE] || themeOpts[DEFAULT_LANGUAGE]}
+          options={themeOpts[DEFAULT_LANGUAGE] || themeOpts.es}
           width="5.1rem"
           height="3.3rem"
           onSelect={this.onMenuSelect}
         />
-        <IndexContainer ref={this.indexContainer} language={DEFAULT_LANGUAGE} />
+        <IndexContainer cards={cards} language={DEFAULT_LANGUAGE} />
       </main>
     );
   }
