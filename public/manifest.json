@@ -1,16 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bitácora AquíConectando.me",
+  "name": "Bitácora AquíConectando.me",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "96x96 32x32 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "icons.ico",
+      "sizes": "256x256 192x192 152x152 144x144 128x128 64x64 24x24",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo384.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "384x384"
     },
     {
       "src": "logo512.png",
