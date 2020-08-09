@@ -27,8 +27,8 @@ const IndexContainer = ({ cards, language }) => {
     <div className="index-container">
       { cards.map((card) => {
         const { id } = card;
-        const { img, head, text, video, audio } = Object.assign(card, card[`$_${language}`]);
-        return (<IndexCard key={id} language={language} id={id} image={img} header={head} text={text} video={video} audio={audio} hidden={isHidden(id)} />);
+        const { img, head, text, video, audio, links } = Object.assign(card, card[`$_${language}`]);
+        return (<IndexCard key={id} language={language} id={id} image={img} header={head} text={text} video={video} audio={audio} links={links} hidden={isHidden(id)} />);
       }) }
     </div>
   );

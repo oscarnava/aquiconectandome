@@ -62,9 +62,18 @@ class IndexCard extends React.Component {
   }
 
   get multimediaFrame() {
-    const { video, audio } = this.props;
+    const { video, audio, links, language, id } = this.props;
+
     return (
       <>
+        { links.map((link, idx) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <p key={`link-${id}-${idx}`} className="link-container">
+            <a href={link}>
+              {i18n('linkLabel', language)}
+            </a>
+          </p>
+        ))}
         { video.map((id) => (
           <div key={id} className="video-container multimedia">
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} controls width="100%" height="100%" />
@@ -80,7 +89,6 @@ class IndexCard extends React.Component {
       </>
     );
   }
-
 
   get content() {
     const { status, memo } = this.state;
@@ -148,6 +156,7 @@ IndexCard.propTypes = {
   text: PropTypes.string.isRequired,
   video: PropTypes.arrayOf(PropTypes.string),
   audio: PropTypes.arrayOf(PropTypes.string),
+  links: PropTypes.arrayOf(PropTypes.string),
   hidden: PropTypes.bool,
 };
 
@@ -155,6 +164,7 @@ IndexCard.defaultProps = {
   language: DEFAULT_LANGUAGE,
   video: [],
   audio: [],
+  links: [],
   hidden: false,
 };
 

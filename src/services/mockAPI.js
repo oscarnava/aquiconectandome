@@ -108,9 +108,11 @@ const MOCK_DATA = {
     img: 'dia-11.jpg',
     head: 'Lo que te hace reir.',
     text: 'Escribe sobre alguna vez que reíste tan fuerte que hasta te salieron lágrimas. ¿Qué ocasionó la risa? ¿Recordar el evento te hace reír?',
+    links: ['https://www.muyinteresante.es/salud/fotos/razones-cientificas-para-reir/razones-reir2'],
     $_en: {
       head: 'What makes you laugh.',
       text: 'Write about a time when you laugh so hard that you had tears in your eyes. What caused the laugh? Does remembering this makes you laugh or smile?',
+      links: ['https://www.scientificamerican.com/article/the-science-of-laughter-and-why-it-also-has-a-dark-side1/'],
     },
   },
   {
