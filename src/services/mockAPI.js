@@ -20,7 +20,7 @@ const MOCK_DATA = {
       head: 'Which is your biggest fear?',
       text: 'Today is a day to turn inside and be aware, write about which is your biggest fear? As you make this excercise to pause and see think: this thing that scares you, is it something rational? ("“Fear is a natural reaction to moving closer to the truth.” Pema Chödron)',
       video: ['qeObZjzH5Gc'],
-      audio: ['calmando_el_miedo_en.mp3'],
+      audio: ['calmando_el_miedo_en.ogg'],
     },
   },
   {
@@ -31,7 +31,7 @@ const MOCK_DATA = {
     $_en: {
       head: 'Ways in which you can improve your life.',
       text: 'Write about five ways in which you can improve your life in the next 6 months. How would you accomplish each one?',
-      audio: ['meditacion_del_cambio_en.mp3'],
+      audio: ['meditacion_del_cambio_en.ogg'],
     },
   },
   {
@@ -57,7 +57,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'día-06.jpg',
+    img: 'dia-06.jpg',
     head: 'Abriendo un universo nuevo',
     text: 'Cambia tú. Cambia radicalmente, deja de hacer las cosas que siempre has estado haciendo. Este es el momento de hacer cosas que no haya hecho nunca. Cambia radicalmente, vuélvete una persona nueva y te sorprenderás, nunca esperes que el otro cambie.',
     video: ['kdZfu48lnD4'],
@@ -134,7 +134,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-14.jpg',
+    img: 'conectandome.svg',
     head: '¿Cómo eres diferente?',
     text: 'Escribe sobre las maneras en que eres particular, diferente, peculiar. ¿Por qué tienes estas características?',
     $_en: {
@@ -143,7 +143,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-15.jpg',
+    img: 'conectandome.svg',
     head: '¡Una mala decisión!',
     text: 'Escribe sobre un momento en que tomaste una mala decisión en tu vida. ¿Cuánto tiempo te tomó darte cuenta del error? ¿Has repetido ese mismo error alguna otra vez?',
     $_en: {
@@ -152,7 +152,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-16.jpg',
+    img: 'conectandome.svg',
     head: 'Tu ansiedad.',
     text: 'Escribe sobre lo que has aprendido de ti mismo acerca de la ansiedad.',
     $_en: {
@@ -161,7 +161,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-17.jpg',
+    img: 'conectandome.svg',
     head: 'Un día de felicidad.',
     text: 'Describe con mucho detalle cómo es para tí un día de felicidad. ¿Cómo es cada momento? ¿Cómo se siente dentro?',
     $_en: {
@@ -170,7 +170,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-18.jpg',
+    img: 'conectandome.svg',
     head: 'Lo que quisieras que otros supieran sobre ti.',
     text: 'Escribe sobre lo que más quisieras que otros supieran sobre ti.',
     $_en: {
@@ -179,7 +179,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-19.jpg',
+    img: 'conectandome.svg',
     head: 'Mírate en el espejo.',
     text: 'Mírate en el espejo. ¿Qué es lo primero que notas? Quédate un buen rato ahí. Mira tus ojos. ¿Qué ves en ellos? ¿Cómo te sientes?',
     $_en: {
@@ -188,7 +188,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-20.jpg',
+    img: 'conectandome.svg',
     head: '¿Qué te produce curiosidad?',
     text: 'Escribe sobre aquello que te produce curiosidad. ¿Qué es eso que quieres aprender o redescubrir? ¿Cómo puedes alcanzar aquello que llama tu curiosidad?',
     $_en: {
@@ -197,7 +197,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-21.jpg',
+    img: 'conectandome.svg',
     head: '¿Cuándo es suficiente?',
     text: '¿Qué es eso de lo que quisieras más? Describe cuándo para ti es suficiente.',
     $_en: {
@@ -206,7 +206,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-22.jpg',
+    img: 'conectandome.svg',
     head: 'Tu salud física y emocional.',
     text: 'Del 1 al 10 califica tu salud física, donde 1 es pésimo y 10 excelente. Con la misma escala, tu salud emocional. ¿Alguna de estas te resulta más difícil que la otra? ¿Usar la misma escala funciona para ti o no? ¿Porqué?',
     $_en: {
@@ -215,7 +215,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-23.jpg',
+    img: 'conectandome.svg',
     head: 'Diciendo ¡No!',
     text: 'Escribe 5 cosas a las que quieres decir ¡NO!. Escribe cuál sería el beneficio para ti de hacerlo.',
     $_en: {
@@ -224,7 +224,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-24.jpg',
+    img: 'conectandome.svg',
     head: 'El sentimiento de soledad.',
     text: 'A veces nos sentimos solos aún cuando estamos entre personas. Escribe sobre un momento en que te sentiste solo. ¿Qué ocasionó que te sintieras así?',
     $_en: {
@@ -233,7 +233,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-25.jpg',
+    img: 'conectandome.svg',
     head: 'Tus canciones favoritas.',
     text: 'Haz una lista de tus 5 canciones favoritas. ¿Qué letra de canción está más presente en tu memoria? ¿Hay algún tema en común?',
     $_en: {
@@ -242,7 +242,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-26.jpg',
+    img: 'conectandome.svg',
     head: 'Halágate.',
     text: 'Escribe 5 halagos hacia ti mismo ¿Es fácil para ti, o te cuesta trabajo regalarte halagos? ¿Porqué?',
     $_en: {
@@ -251,7 +251,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-27.jpg',
+    img: 'conectandome.svg',
     head: '¡Ponte al día!',
     text: 'Date tiempo para revisar y ponerte al día. Sé que no es fácil pero no abandones, hemos avanzado mucho. Solemos poner la excusa de que estamos muy ocupados; a pesar de que las intenciones iniciales son buenas le damos prioridad a otras cosas. pero algo que es fundamental es el tiempo que te das para cuidar de ti mismo. Reconoce en este momento tu esfuerzo y restablece tu propósito.',
     $_en: {
@@ -260,7 +260,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-28.jpg',
+    img: 'conectandome.svg',
     head: '¿Qué es el amor?',
     text: 'Describe qué es amor para ti, no solo el amor romántico o de pareja. ¿Cómo ves el amor? ¿Cómo se escucha? ¿Cómo lo tocas? ¿Cómo lo sientes? Regalate algunos detalles a ti mismo y siéntelo.',
     $_en: {
@@ -269,7 +269,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-29.jpg',
+    img: 'conectandome.svg',
     head: 'Tus tradiciones.',
     text: 'Escribe sobre una tradición familiar o cultural que quisieras cambiar. ¿Qué te gustaría hacer diferente?',
     $_en: {
@@ -278,7 +278,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-30.jpg',
+    img: 'conectandome.svg',
     head: 'Cuida de ti.',
     text: 'Haz una lista con al menos 8 cosas que puedes hacer por ti, para cuidar de ti en medio de las rutinas, las demandas, los retos emocionales, las exigencias laborales.',
     $_en: {
@@ -287,7 +287,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-31.jpg',
+    img: 'conectandome.svg',
     head: '¿Qué te hace sentir auténtico?',
     text: 'Escribe sobre qué es lo que te hace sentir más auténtico y cómodo.',
     $_en: {
@@ -296,7 +296,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-32.jpg',
+    img: 'conectandome.svg',
     head: 'Los inicios.',
     text: 'Escribe sobre los inicios que han impactado tu vida',
     $_en: {
@@ -305,7 +305,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-33.jpg',
+    img: 'conectandome.svg',
     head: '¿Qué te hace sentir a salvo?',
     text: 'Escribe sobre qué es lo que te ayuda a sentirte física y emocionalmente a salvo, seguro.',
     $_en: {
@@ -314,7 +314,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-34.jpg',
+    img: 'conectandome.svg',
     head: 'Los recuerdos de tu niñez.',
     text: 'Escribe sobre recuerdos de tu niñez y habla sobre las mujeres que dejaron una huella en tu vida. ¿Cuáles fueron las cualidades que te impactaron?',
     $_en: {
@@ -323,7 +323,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-35.jpg',
+    img: 'conectandome.svg',
     head: '¿Qué es para ti perdonar?',
     text: 'Escribe sobre lo que es para ti perdonar.',
     $_en: {
@@ -332,7 +332,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-36.jpg',
+    img: 'conectandome.svg',
     head: 'Regresa y revisa tu bitácora.',
     text: 'Regresa y lee lo que respondiste antes en tu bitácora. ¿Hay alguna respuesta que quisieras cambiar, escribir algo diferente? ¿Porqué?',
     $_en: {
@@ -341,7 +341,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-37.jpg',
+    img: 'conectandome.svg',
     head: 'Cosas que agradeces.',
     text: 'Escribe sobre 10 cosas que agradeces, porque ya las tienes.',
     $_en: {
@@ -350,7 +350,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-38.jpg',
+    img: 'conectandome.svg',
     head: '¿Eres perfeccionista?',
     text: '¿Eres perfeccionista? ¿Hay algunas cosas que necesitan estar perfectas, más que otras? Si te parece así, ¿Por que?',
     $_en: {
@@ -359,7 +359,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-39.jpg',
+    img: 'conectandome.svg',
     head: 'Retando tu paciencia...',
     text: 'Escribe sobre una persona o una situación que realmente es un reto a tu paciencia.',
     $_en: {
@@ -368,7 +368,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-40.jpg',
+    img: 'conectandome.svg',
     head: 'Los eventos de tu pasado.',
     text: 'Los eventos del pasado le dan forma al presente, pero no tienen porqué darle forma al futuro. ¿Qué eventos del pasado causaron que algo en ti se cerrara? ¿Fue para protegerte? ¿Cómo te ha lastimado esto a ti o a tus relaciones actuales?¿Qué cambios benéficos quieres crear para la siguiente temporada?',
     $_en: {
@@ -377,7 +377,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'dia-41.jpg',
+    img: 'conectandome.svg',
     head: 'La magia de los inicios.',
     text: 'Confía en la magia de los inicios. Escribe sobre momentos en que has sentido la magia del asombro, y cómo puedes mantenerte abierto para permitir que sigan apareciendo.',
     $_en: {
