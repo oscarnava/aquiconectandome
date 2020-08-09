@@ -7,5 +7,5 @@ export default {
   STATUS_PENDING: 'PENDING',
   STATUS_UNAVAILABLE: 'UNAVAILABLE',
   DEFAULT_LANGUAGE: urlParams.get('lang') || browserLanguage,
-  DEBUG_MODE: true,
+  DEBUG_MODE: urlParams.get('debug') === 'on' || true,
 };
