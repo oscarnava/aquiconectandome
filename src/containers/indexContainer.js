@@ -13,8 +13,6 @@ const IndexContainer = ({ cards, language }) => {
   let byCount = 5;
 
   const isHidden = (id) => {
-    // return false;
-
     const done = dataManager.cardDone(id);
     byDate -= 1;
     if (done) {

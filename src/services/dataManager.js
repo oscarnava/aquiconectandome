@@ -1,6 +1,6 @@
 import Globals from '../globals';
 
-const { STATUS_DONE } = Globals;
+const { STATUS_DONE, DEBUG_MODE } = Globals;
 const MEMO_KEY = (id) => `memo-${id}`;
 const STATE_KEY = (id) => `state-${id}`;
 const START_DATE_KEY = 'bitacora-start';
@@ -28,7 +28,7 @@ const dataManager = {
 
   cardDone(id) {
     const { status } = this.getState(id, { status: null });
-    return status === STATUS_DONE;
+    return status === STATUS_DONE || DEBUG_MODE;
   },
 
 };
