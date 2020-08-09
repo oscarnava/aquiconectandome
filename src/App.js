@@ -62,7 +62,7 @@ export default class App extends React.Component {
         />
         <IndexContainer cards={cards} language={DEFAULT_LANGUAGE} />
         <footer className={theme}>
-          <a href="mailto:aquiconectando@gmail.com">Contáctanos para sesiones privadas</a>
+          <a href="mailto:aquiconectando@gmail.com">{i18n('contact')}</a>
         </footer>
       </main>
     );
