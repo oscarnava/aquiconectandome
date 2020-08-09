@@ -61,6 +61,9 @@ export default class App extends React.Component {
           onSelect={this.onMenuSelect}
         />
         <IndexContainer cards={cards} language={DEFAULT_LANGUAGE} />
+        <footer className={theme}>
+          <a href="mailto:aquiconectando@gmail.com">Contáctanos para sesiones privadas</a>
+        </footer>
       </main>
     );
   }

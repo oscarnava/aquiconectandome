@@ -73,3 +73,45 @@ header
   @media only screen and (max-width: $low-res)
     position: absolute
     border-radius: 10px
+
+footer
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
+  text-align: center
+  border-top: solid 2px white
+  padding: 2px 0 4px
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
+  box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
+
+  a
+    color: inherit
+    font-size: 1.2rem
+    text-decoration: none
+    font-weight: bold
+
+    &::before
+      content: '📧 '
+      font-size: 1.2em
+
+  &.amate
+    color: #1b3d8a
+    background-image: url(../themes/pattern.png)
+    border-color: #0d1599
+
+  &.wood
+    color: #fdff92
+    background-image: url(../themes/wood-tile.jpg)
+    border-color: #e06500
+
+  &.day
+    color: black
+    background-color: $day-color
+    border-color: darkgrey
+
+  &.night
+    color: white
+    background-color: $night-color
+    border-color: lighten($night-color, 30%)
