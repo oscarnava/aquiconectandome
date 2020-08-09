@@ -370,3 +370,10 @@ MOCK_DATA.bitacora.forEach((entry, idx) => { entry.id = idx + 1; });
 const request = ({ cmd }) => Promise.resolve(MOCK_DATA[cmd] || null);
 
 export default request;
+
+// let output = '';
+// MOCK_DATA.bitacora.forEach((r) => {
+//   output += `${r.id},${r.img},"${r.head}","${r.$_en.head}","${r.text}","${r.$_en.text}"\n`;
+// });
+
+// console.log(output);
