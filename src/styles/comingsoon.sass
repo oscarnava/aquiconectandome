@@ -1,0 +1,38 @@
+$low-res: 650px
+
+.coming-soon
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  background-color: grey
+
+  @media only screen and (max-width: $low-res)
+    overflow: auto
+    height: auto
+
+  .container
+    display: flex
+    height: 96vh
+    width: calc(96vh * 1.536)
+    margin: 2vh auto
+    overflow: hidden
+    border: solid thin black
+    border-radius: 10px
+    box-shadow: 10px 10px 5px -6px black
+
+    @media only screen and (max-width: $low-res)
+      flex-direction: column
+      width: 100vw
+      height: auto
+      overflow: auto
+      margin: 0 0
+      border-radius: 0
+
+    img
+      // border: solid thin red
+      width: 33.33%
+      // height: 100%
+
+      @media only screen and (max-width: $low-res)
+        width: 100vw
+        // height: calc(100vw * 1.536)

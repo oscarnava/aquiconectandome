@@ -6,8 +6,9 @@ import IndexContainer from './containers/indexContainer';
 import CubeMenu from './components/cubeMenu';
 import './styles/app.sass';
 import Globals from './globals';
+import ComingSoon from './components/comingsoon';
 
-const { DEFAULT_LANGUAGE } = Globals;
+const { DEFAULT_LANGUAGE, DEBUG_MODE } = Globals;
 
 const themeOpts = {
   es: {
@@ -48,8 +49,15 @@ export default class App extends React.Component {
   }
 
   render() {
+    const today = Date.now();
+    const publish = new Date(2020, 8, 20, 0, 0, 0);
+    if (!DEBUG_MODE && today - publish < 0) {
+      return (<ComingSoon />);
+    }
+
     const { cards, theme } = this.state;
     console.log({ state: this.state });
+
     return (
       <main className={`app ${theme}`}>
         <header className={theme}>{i18n('AppName')}</header>
