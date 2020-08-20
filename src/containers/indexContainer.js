@@ -10,7 +10,7 @@ const { DEFAULT_LANGUAGE } = Globals;
 const IndexContainer = ({ cards, language }) => {
   // eslint-disable-next-line no-bitwise
   let byDate = (dataManager.getToday() - dataManager.getStartDay() + 2) >> 1;
-  let byCount = 5;
+  let byCount = 3;
 
   const isHidden = (id) => {
     const done = dataManager.cardDone(id);
