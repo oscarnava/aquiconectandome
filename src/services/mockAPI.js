@@ -140,27 +140,32 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-14.jpg',
     head: '¿Cómo eres diferente?',
     text: 'Escribe sobre las maneras en que eres particular, diferente, peculiar. ¿Por qué tienes estas características?',
+    video: ['mqFyqmAQ2d4'],
     $_en: {
       head: 'How are you different?',
       text: 'Write about the ways you are particular, different, peculiar. ¿Why do you have these characteristics?',
+      video: ['7Ib_8IXbdKM'],
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-15.jpg',
     head: '¡Una mala decisión!',
     text: 'Escribe sobre un momento en que tomaste una mala decisión en tu vida. ¿Cuánto tiempo te tomó darte cuenta del error? ¿Has repetido ese mismo error alguna otra vez?',
+    video: ['k4jBulQx57E'],
     $_en: {
       head: 'A bad decision!',
       text: 'Remember and write about a time when you made a bad decision in your life. How much time passes for you to realize the mistake? Has something like this presented again?',
+      video: ['3_ywfGDT0J0'],
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-16.jpg',
     head: 'Tu ansiedad.',
     text: 'Escribe sobre lo que has aprendido de ti mismo acerca de la ansiedad.',
+    video: ['iIehqq3ktrQ'],
     $_en: {
       head: 'Your anxiety.',
       text: 'Write about what you have learned of yourself when there is anxiety.',
