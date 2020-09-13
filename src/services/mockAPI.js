@@ -38,7 +38,7 @@ const MOCK_DATA = {
     img: 'dia-04.jpg',
     head: 'Tus cualidades.',
     text: '¿Cuál de tus cualidades te gusta más? ¿Por qué? ¿Cómo te ayuda esta cualidad en tu vida? ¿Te ha causado algún problema?',
-    video: ['IC3BaAmYA5I  '],
+    video: ['IC3BaAmYA5I'],
     $_en: {
       head: 'Your qualities',
       text: 'Think about your qualities, which one do you like the best? why? how this quality has been helpful in your life? which one could have brought you a problem?',
@@ -101,9 +101,11 @@ const MOCK_DATA = {
     img: 'dia-10.jpg',
     head: 'Cosas que te hacen llorar.',
     text: 'Escribe sobre tres cosas que siempre te hacen llorar. ¿Llorar ayuda a la situación? ¿Si sí, cómo?',
+    video: ['YPcCYvJidak'],
     $_en: {
       head: 'Things that make you cry.',
       text: 'Write about three things that always make you cry. Does crying help the situation? If your answer is yes, how?',
+      video: ['0FXzZtpQiIk'],
     },
   },
   {
@@ -142,11 +144,11 @@ const MOCK_DATA = {
   {
     img: 'dia-14.jpg',
     head: '¿Cómo eres diferente?',
-    text: 'Escribe sobre las maneras en que eres particular, diferente, peculiar. ¿Por qué tienes estas características?',
+    text: 'Escribe sobre las maneras en que eres particular, diferente, peculiar. ¿Por qué tienes estas características? Canta tu propia canción y baila con tu propio ritmo.',
     video: ['mqFyqmAQ2d4'],
     $_en: {
       head: 'How are you different?',
-      text: 'Write about the ways you are particular, different, peculiar. ¿Why do you have these characteristics?',
+      text: 'Write about the ways you are particular, different, peculiar. ¿Why do you have these characteristics? Sing your own song and dance with your own rithm',
       video: ['7Ib_8IXbdKM'],
     },
   },
