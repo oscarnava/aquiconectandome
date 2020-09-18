@@ -174,16 +174,18 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-17.jpg',
     head: 'Un día de felicidad.',
     text: 'Describe con mucho detalle cómo es para tí un día de felicidad. ¿Cómo es cada momento? ¿Cómo se siente dentro?',
+    links: ['https://www.blogpsicopositiva.com/2019/04/las-cinco-claves-de-la-felicidad.html', 'http://drsonja.net/wp-content/uploads/2012/10/Vanidades-Chile-magazine-ARTICLE.pdf'],
     $_en: {
       head: 'A happy day.',
       text: 'Write with a lot of detail, how a very happy day looks like. How is each moment? how do you feel from the inside?',
+      links: ['https://greatergood.berkeley.edu/article/item/how_happy_brains_respond_to_negative_things'],
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-18.jpg',
     head: 'Lo que quisieras que otros supieran sobre ti.',
     text: 'Escribe sobre lo que más quisieras que otros supieran sobre ti.',
     $_en: {
@@ -192,7 +194,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-19.jpg',
     head: 'Mírate en el espejo.',
     text: 'Mírate en el espejo. ¿Qué es lo primero que notas? Quédate un buen rato ahí. Mira tus ojos. ¿Qué ves en ellos? ¿Cómo te sientes?',
     $_en: {
@@ -201,7 +203,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-20.jpg',
     head: '¿Qué te produce curiosidad?',
     text: 'Escribe sobre aquello que te produce curiosidad. ¿Qué es eso que quieres aprender o redescubrir? ¿Cómo puedes alcanzar aquello que llama tu curiosidad?',
     $_en: {
@@ -210,7 +212,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-21.jpg',
     head: '¿Cuándo es suficiente?',
     text: '¿Qué es eso de lo que quisieras más? Describe cuándo para ti es suficiente.',
     $_en: {
@@ -219,7 +221,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-22.jpg',
     head: 'Tu salud física y emocional.',
     text: 'Del 1 al 10 califica tu salud física, donde 1 es pésimo y 10 excelente. Con la misma escala, tu salud emocional. ¿Alguna de estas te resulta más difícil que la otra? ¿Usar la misma escala funciona para ti o no? ¿Porqué?',
     $_en: {
@@ -237,7 +239,7 @@ const MOCK_DATA = {
     },
   },
   {
-    img: 'conectandome.svg',
+    img: 'dia-24.jpg',
     head: 'El sentimiento de soledad.',
     text: 'A veces nos sentimos solos aún cuando estamos entre personas. Escribe sobre un momento en que te sentiste solo. ¿Qué ocasionó que te sintieras así?',
     $_en: {
