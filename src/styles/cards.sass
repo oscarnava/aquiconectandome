@@ -32,6 +32,12 @@ $night-theme-color: #111
           background-color: #ffffff80
           border-color: darkgrey
 
+          .header
+            color: brown
+            background-color: #ffffff70
+            background-color: #ffffff80
+            background-image: url(../themes/pattern.png)
+
 .wood
   .index-container
     background-color: darken($wood-theme-color, 10%)
@@ -61,6 +67,12 @@ $night-theme-color: #111
           background-color: lighten($wood-theme-color, 75%)
           border-color: lighten($wood-theme-color, 30%)
 
+          .header
+            color: #fdff92
+            background-color: $wood-theme-color
+            border-color: lighten($wood-theme-color, 30%)
+            background-image: url(../themes/wood-tile.jpg)
+
 .night
   .index-container
     background-color: darken($night-theme-color, 10%)
@@ -88,6 +100,12 @@ $night-theme-color: #111
         .memo
           background-color: lighten($night-theme-color, 75%)
           border-color: darken($night-theme-color, 10%)
+
+          .header
+            color: white
+            background-color: $night-theme-color
+            border-color: darken($night-theme-color, 10%)
+            background-image: url(../themes/night-texture.jpg)
 
 .day
   .index-container
@@ -195,12 +213,26 @@ $night-theme-color: #111
 
     .card-done
       .memo
+        position: relative
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
         font-size: 0.8rem
+        font-style: italic
         padding: 1rem
         border-radius: $def-border-radius
         border: solid 2px darkgrey
         background-color: lighten($day-theme-color, 20%)
+
+        .header
+          position: absolute
+          top: -14px
+          left: -3px
+          font-style: normal
+          font-weight: bold
+          border-radius: $def-border-radius
+          border: solid 2px darkgrey
+          padding: 3px 10px
+          color: black
+          background-color: lighten($day-theme-color, 20%)
 
     .video-container
       position: relative
